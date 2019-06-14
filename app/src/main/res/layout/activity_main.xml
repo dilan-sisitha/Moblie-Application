@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
@@ -8,67 +8,137 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lay01"
+        android:layout_marginTop="50dp"
+        >
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="310dp"
-        android:layout_height="297dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
-        android:layout_marginBottom="346dp"
         android:src="@drawable/pizzalogo1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         />
 
     <TextView
+
         android:id="@+id/textslogan"
-        android:layout_width="339dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="283dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Dino's Pizza Dilivery"
+        android:text="'Pizza loop'"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-medium"
         android:textColor="@android:color/white"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="169dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="121dp"
-        android:layout_marginLeft="121dp"
-        android:layout_marginTop="543dp"
-
-        android:layout_marginEnd="121dp"
-        android:layout_marginRight="121dp"
-        android:layout_marginBottom="125dp"
-        android:background="@drawable/cust_button"
-        android:text="ORDER NOW!"
         android:textSize="20dp"
-        android:textColor="@android:color/white"
-        android:shadowColor="#000000"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+         />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingTop="0dp"
+            >
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textColor="@color/warning"
+                android:textSize="15dp"
 
 
-</android.support.constraint.ConstraintLayout>
+                />
+
+            <EditText
+                android:id="@+id/enteruser"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/cust_edittext"
+                android:drawableRight="@drawable/ic_account_box_black_24dp"
+                android:hint="  user name"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:passwordToggleDrawable="@drawable/ic_vpn_key_black_24dp"
+                app:passwordToggleEnabled="true"
+                >
+                 <android.support.design.widget.TextInputEditText
+                        android:id="@+id/enterpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="  password"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="left"
+                        android:paddingLeft="10dp"
+                        android:background="@drawable/cust_edittext"
+                        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                        android:inputType="textPassword"
+
+                  />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lay01"
+            android:layout_marginTop="25dp"
+
+
+            >
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:text="Register Now"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+
+                android:background="@drawable/cust_button"
+                />
+
+            <Button
+                android:id="@+id/signin"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:background="@drawable/cust_button2"
+                android:gravity="center_vertical"
+                android:text="Sign in"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_marginLeft="50dp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

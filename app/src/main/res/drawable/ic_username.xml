@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#D7D7E1"/>
+    <corners android:bottomLeftRadius="3dp"
+        android:topLeftRadius="30dp"/>
+</shape>
+
+ <item android:width="40dp"
+     android:height="40dp"
+     android:gravity="center"
+     android:drawable="@drawable/ic_account_box_black_24dp"/>
+
+</layer-list>
