@@ -40,7 +40,7 @@ public class Menu_list extends AppCompatActivity {
                 null, new HTTPResponseListner(), new HTTPErrorListner());
         queue.add(request);
     }
-    class HTTPResponseListner implements Response.Listener<JSONArray>{
+    private class HTTPResponseListner implements Response.Listener<JSONArray>{
         @Override
         public void onResponse(JSONArray jsonArray) {
             for(int i = 0; i < jsonArray.length(); i++) {
@@ -64,7 +64,7 @@ public class Menu_list extends AppCompatActivity {
         }
     }
 
-    class HTTPErrorListner implements Response.ErrorListener {
+    private class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
         }
@@ -93,4 +93,6 @@ public class Menu_list extends AppCompatActivity {
             return convertView;
         }
     }
+
+
 }

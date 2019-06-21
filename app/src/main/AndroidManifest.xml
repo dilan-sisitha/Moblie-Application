@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Menu_list"></activity>
         <activity
-            android:name=".Sign_in"
+            android:name=".Register"
             android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".LoginActivity"

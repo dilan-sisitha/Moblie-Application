@@ -14,7 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class Sign_in extends AppCompatActivity {
+public class Register extends AppCompatActivity {
     public EditText username,password,email,mobile;
     public TextView responce;
     public Button adduser;
@@ -45,7 +45,7 @@ public class Sign_in extends AppCompatActivity {
 
                 String url = "http://192.168.1.101:8080/demo/useradd?user_name="+user+"&password="+email1+"&email="+password1+"&telephone="+mobieno;
 
-                RequestQueue requestQueue = Volley.newRequestQueue(Sign_in.this);
+                RequestQueue requestQueue = Volley.newRequestQueue(Register.this);
 
 
                 StringRequest stringRequest = new StringRequest(
