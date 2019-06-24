@@ -14,8 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecycleViewMenu"></activity>
-        <activity android:name=".Menu_list" />
+        <activity android:name=".ExpandDetails"></activity>
+        <activity android:name=".RecycleViewMenu" />
         <activity
             android:name=".Register"
             android:parentActivityName=".MainActivity" />

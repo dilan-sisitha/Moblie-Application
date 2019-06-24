@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openMenu() {
-        Intent intent = new Intent(this, Menu_list.class);
+        Intent intent = new Intent(this, RecycleViewMenu.class);
         startActivity(intent);
 
     }
