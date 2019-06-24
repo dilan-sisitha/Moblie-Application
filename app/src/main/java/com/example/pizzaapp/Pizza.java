@@ -5,8 +5,16 @@ public class Pizza {
     int pizzaId;
     String name;
     String details;
-    float price;
+    Double price;
     String imageURL;
+
+    public Pizza(int pizzaId, String name, String details, Double price, String imageURL) {
+        this.pizzaId = pizzaId;
+        this.name = name;
+        this.details = details;
+        this.price = price;
+        this.imageURL = imageURL;
+    }
 
     public int getPizzaId() {
         return pizzaId;
@@ -32,11 +40,11 @@ public class Pizza {
         this.details = details;
     }
 
-    public float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

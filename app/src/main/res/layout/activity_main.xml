@@ -73,14 +73,14 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
                 app:passwordToggleDrawable="@drawable/ic_vpn_key_black_24dp"
                 app:passwordToggleEnabled="true"
                 >
                  <android.support.design.widget.TextInputEditText
                         android:id="@+id/enterpassword"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:hint="  password"
                         android:gravity="center_vertical"
                         android:layout_gravity="left"

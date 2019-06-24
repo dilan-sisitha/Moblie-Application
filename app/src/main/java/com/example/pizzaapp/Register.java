@@ -1,11 +1,13 @@
 package com.example.pizzaapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,9 +17,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 public class Register extends AppCompatActivity {
-    public EditText username,password,email,mobile;
-    public TextView responce;
+    public EditText username, password, email, mobile;
     public Button adduser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,6 @@ public class Register extends AppCompatActivity {
         email = findViewById(R.id.Email);
         password = findViewById(R.id.Password);
         mobile = findViewById(R.id.telephone);
-        responce = findViewById(R.id.result);
         adduser = findViewById(R.id.addUser);
 
         adduser.setOnClickListener(new View.OnClickListener() {
@@ -43,15 +44,15 @@ public class Register extends AppCompatActivity {
                 String mobieno = mobile.getText().toString();
 
 
-                String url = "http://192.168.1.101:8080/demo/useradd?user_name="+user+"&password="+email1+"&email="+password1+"&telephone="+mobieno;
+                String url = "http://192.168.1.101:8080/demo/useradd?user_name=" + user + "&password=" + email1 + "&email=" + password1 + "&telephone=" + mobieno;
 
                 RequestQueue requestQueue = Volley.newRequestQueue(Register.this);
 
 
                 StringRequest stringRequest = new StringRequest(
                         Request.Method.GET
-                        ,url
-                        ,new HTTPResponceListner(),
+                        , url
+                        , new HTTPResponceListner(),
                         new HTTPErrorListner());
 
                 requestQueue.add(stringRequest);
@@ -59,24 +60,33 @@ public class Register extends AppCompatActivity {
         });
 
 
-
     }
-    private class HTTPResponceListner implements Response.Listener<String>
-    {
+
+    private class HTTPResponceListner implements Response.Listener<String> {
         @Override
         public void onResponse(String response) {
-            responce.setText("User "+response);
+            //responce.setText("User "+response);
+            Toast.makeText(getApplicationContext(), "User "+response, Toast.LENGTH_SHORT).show();
+            backToMenu();
+
 
         }
 
 
     }
 
-    private class HTTPErrorListner implements Response.ErrorListener{
+    private class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
-            responce.setText(error.getMessage());
+            //responce.setText(error.getMessage());
+            Toast.makeText(getApplicationContext(), "connection error", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void backToMenu() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 
+}

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -80,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
             if(result == 1) {
 
                 openMenu();
-
             }
             else {
-                message.setText("User or password incorrect");
+               // message.setText("User or password incorrect");
+                Toast.makeText(getApplicationContext(),"User or password incorrect",Toast.LENGTH_SHORT).show();
 
             }
 
@@ -95,7 +96,9 @@ public class MainActivity extends AppCompatActivity {
     private class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
-            message.setText(error.getMessage());
+           // message.setText(error.getMessage());
+            Toast.makeText(getApplicationContext(),"connection error ",Toast.LENGTH_SHORT).show();
+
         }
     }
 

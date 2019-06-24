@@ -52,7 +52,7 @@ public class Menu_list extends AppCompatActivity {
                     pizza.setImageURL(object.get("imageUrl").toString());
                     pizza.setDetails(object.get("description").toString());
                     pizzaDetails.add(pizza);
-                    Toast.makeText(getApplicationContext(),"display",Toast.LENGTH_SHORT).show();
+
 
                     ListView pizzaList = findViewById(R.id.listView);
                     CustomAdapter listAdapter = new CustomAdapter(getApplicationContext(), R.layout.list_item, pizzaDetails);
