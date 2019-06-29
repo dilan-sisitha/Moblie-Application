@@ -1,52 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExpandDetails"
-    android:orientation="vertical">
-    <LinearLayout
+    tools:context=".ExpandDetails">
+
+
+
+
+    <ImageView
+        android:id="@+id/detail_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:contentDescription="TODO"
+        android:layout_height="170dp"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:id="@+id/itemname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="name"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/detail_image"/>
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemname"
+        android:layout_margin="15dp"
+        android:text="description"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/txtprice"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="price"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/details"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textStyle="bold" />
 
 
 
-        <ImageView
-            android:id="@+id/detail_image"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="20dp"
-            />
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="name"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:gravity="center"
-            />
-        <TextView
-            android:id="@+id/details"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="15dp"
-            android:text="description"
-            android:textSize="15dp"
-            />
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:text="price"
-            />
+
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/elegantBtn"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/txtprice"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        app:initialNumber="1"
+        app:finalNumber="25">
+
+    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+    <Button
+        android:id="@+id/purchaseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/elegantBtn"
+        android:layout_gravity="left"
+        android:text="PURCHASE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+
+        />
 
 
 
 
-    </LinearLayout>
-</ScrollView>
+
+</RelativeLayout>

@@ -125,7 +125,7 @@
                 android:layout_height="45dp"
                 android:background="@drawable/cust_button2"
                 android:gravity="center_vertical"
-                android:text="Sign in"
+                android:text="LOG IN"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="15dp"

@@ -58,7 +58,6 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.PizzaViewHol
             public void onClick(View v) {
 
 
-                Toast.makeText(v.getContext(), "click", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ctx, ExpandDetails.class);
                 intent.putExtra(EXTRA_URL, pizza.getImageURL());
                 intent.putExtra(EXTRA_NAME, pizza.getName());
