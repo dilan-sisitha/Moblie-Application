@@ -64,7 +64,7 @@ public class Register extends AppCompatActivity {
     private class HTTPResponceListner implements Response.Listener<String> {
         @Override
         public void onResponse(String response) {
-            //responce.setText("User "+response);
+            
             Toast.makeText(getApplicationContext(), "User "+response, Toast.LENGTH_SHORT).show();
             backToMenu();
 
