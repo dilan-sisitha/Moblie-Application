@@ -31,7 +31,7 @@ public class CartActivity extends AppCompatActivity {
     CartAdapter adapter;
 
     List<Cart> cartList;
-    final static String url ="http://192.168.1.100:8080/demo/allcart";
+    final static String url ="http://192.168.1.101:8080/demo/allcart";
 
     private Button checkout;
     private TextView txtTotal;
@@ -71,7 +71,7 @@ public class CartActivity extends AppCompatActivity {
 
                                 JSONObject cartobject = carts.getJSONObject(i);
 
-                                int id = cartobject.getInt("order_id");
+                                int id = cartobject.getInt("orderId");
                                 String pizza = cartobject.getString("pizza_type");
                                 int quantity = cartobject.getInt("quantity");
                                 Double price = cartobject.getDouble("price");

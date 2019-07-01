@@ -1,6 +1,7 @@
 package com.example.pizzaapp.CartItems;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.R;
 
 import java.util.List;
@@ -40,6 +46,35 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         cartViewHolder.txtQuantity.setText(String.valueOf(cart.getQuantity()));
         cartViewHolder.txtPrice.setText(String.valueOf(cart.getPrice()));
 
+        cartViewHolder.deleteitem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String orderId = String.valueOf(cart.getOrder_Id());
+                // Toast.makeText(Ctx.getApplicationContext(),orderId,Toast.LENGTH_SHORT).show();
+
+                String url = "http://192.168.1.101:8080/demo/deleteByCartId?id=" + orderId ;
+
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                Toast.makeText(Ctx,"sucessfully deleted",Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Ctx,CartActivity.class);
+                                Ctx.startActivity(intent);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        Toast.makeText(Ctx,"error",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                Volley.newRequestQueue(Ctx).add(stringRequest);
+            }
+        });
+
 
 
     }
@@ -63,16 +98,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             txtPrice = itemView.findViewById(R.id.productPriceView);
 
 
-            deleteitem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-
-                    Toast.makeText(Ctx.getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
-
-
-                }
-            });
 
         }
     }

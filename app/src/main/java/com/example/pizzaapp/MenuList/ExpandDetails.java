@@ -95,7 +95,7 @@ public class ExpandDetails extends AppCompatActivity {
 
        // Toast.makeText(getApplicationContext(),(pizzaName+" "+quantity+" "+updatedPrice),Toast.LENGTH_LONG).show();
 
-        String url = "http://192.168.1.100:8080/demo/addcart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
+        String url = "http://192.168.1.101:8080/demo/addcart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
 
         RequestQueue requestQueue = Volley.newRequestQueue(ExpandDetails.this);
 

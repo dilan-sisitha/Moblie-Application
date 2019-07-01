@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String pass = userPassword.getText().toString();
 
 
-        String url = "http://192.168.1.100:8080/demo/checkUser?email=" + email + "&password=" + pass;
+        String url = "http://192.168.1.101:8080/demo/checkUser?email=" + email + "&password=" + pass;
 
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openRegister(View view) {
         Intent intent = new Intent(this,Register.class);
+        startActivity(intent);
+    }
+
+    public void opennext(View view) {
+        Intent intent = new Intent(this,RecycleViewMenu.class);
         startActivity(intent);
     }
 
