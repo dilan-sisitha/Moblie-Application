@@ -1,4 +1,4 @@
-package com.example.pizzaapp;
+package com.example.pizzaapp.MenuList;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +16,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.pizzaapp.CartItems.CartActivity;
+import com.example.pizzaapp.R;
 import com.squareup.picasso.Picasso;
 
-import static com.example.pizzaapp.PizzaAdapter.EXTRA_DESC;
-import static com.example.pizzaapp.PizzaAdapter.EXTRA_NAME;
-import static com.example.pizzaapp.PizzaAdapter.EXTRA_PRICE;
-import static com.example.pizzaapp.PizzaAdapter.EXTRA_URL;
+import static com.example.pizzaapp.MenuList.PizzaAdapter.EXTRA_DESC;
+import static com.example.pizzaapp.MenuList.PizzaAdapter.EXTRA_NAME;
+import static com.example.pizzaapp.MenuList.PizzaAdapter.EXTRA_PRICE;
+import static com.example.pizzaapp.MenuList.PizzaAdapter.EXTRA_URL;
 
 public class ExpandDetails extends AppCompatActivity {
 
@@ -64,6 +66,7 @@ public class ExpandDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addToCartList();
+
             }
         });
 
@@ -79,8 +82,9 @@ public class ExpandDetails extends AppCompatActivity {
 
 
     }
-    private void addToCartList() {
 
+
+    private void addToCartList() {
 
         String pizzaName = textViewName.getText().toString();
         String price = textViewPrice.getText().toString();
@@ -89,9 +93,9 @@ public class ExpandDetails extends AppCompatActivity {
 
         String updatedPrice = changePrice(price,quantity);
 
+       // Toast.makeText(getApplicationContext(),(pizzaName+" "+quantity+" "+updatedPrice),Toast.LENGTH_LONG).show();
 
-
-        String url = "http://192.168.1.101:8080/demo/cart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
+        String url = "http://192.168.1.100:8080/demo/addcart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
 
         RequestQueue requestQueue = Volley.newRequestQueue(ExpandDetails.this);
 
@@ -102,6 +106,8 @@ public class ExpandDetails extends AppCompatActivity {
                 new HTTPErrorListner());
 
         requestQueue.add(stringRequest);
+
+
     }
 
     private String changePrice(String price,String quantity) {
@@ -111,6 +117,19 @@ public class ExpandDetails extends AppCompatActivity {
         Double updatedPrice = doublePrice * doubleQuantity;
         String newprice = String.valueOf(updatedPrice);
         return (newprice) ;
+    }
+
+    public void OpenCart(View view) {
+
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
+
+
+    }
+
+    public void goback(View view) {
+        Intent intent = new Intent(this,RecycleViewMenu.class);
+        startActivity(intent);
     }
 
     private class HTTPResponceListner implements Response.Listener<String> {
@@ -128,8 +147,9 @@ public class ExpandDetails extends AppCompatActivity {
         @Override
         public void onErrorResponse(VolleyError error) {
             //responce.setText(error.getMessage());
-            Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"connection error// "+error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
 
 }

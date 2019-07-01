@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="15dp"
+    android:layout_margin="20dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="5dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:text="Pizza Name"
+                android:textColor="@android:color/black"
+                android:layout_toLeftOf="@id/productNameView"/>
+            <TextView
+                android:id="@+id/productquantity"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:text="Quantity"
+                android:textColor="@android:color/black"
+                android:layout_toLeftOf="@id/productQuantityView"
+                android:layout_below="@id/productNameView"/>
+            <TextView
+                android:id="@+id/productprice"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:text="Price"
+                android:textColor="@android:color/black"
+                android:layout_toLeftOf="@id/productPriceView"
+                android:layout_below="@id/productquantity"/>
+            <TextView
+                android:id="@+id/productNameView"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:text="Product Name"
+                android:textColor="@android:color/black"
+                android:layout_marginRight="50dp"/>
+
+            <TextView
+                android:id="@+id/productQuantityView"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productNameView"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Product Quantity"
+                android:textColor="@android:color/black"
+                android:layout_marginRight="50dp"/>
+
+            <TextView
+                android:id="@+id/productPriceView"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productQuantityView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:text="Product Price"
+                android:textColor="@android:color/black"
+                android:layout_marginRight="50dp"
+                />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="-50dp"
+                android:layout_marginLeft="-311dp"
+                android:layout_toEndOf="@+id/productQuantityView"
+                android:layout_toRightOf="@+id/productQuantityView"
+                android:src="@drawable/ic_delete1"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

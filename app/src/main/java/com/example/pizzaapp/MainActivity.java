@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pizzaapp.MenuList.RecycleViewMenu;
 
 public class MainActivity extends AppCompatActivity {
     private Button registerBtn;
@@ -35,21 +36,11 @@ public class MainActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.register);
         message = findViewById(R.id.info);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRegister();
-            }
-        });
+
 
 
     }
 
-    public void openRegister() {
-        Intent intent = new Intent(this, Register.class);
-        startActivity(intent);
-
-    }
     public void openMenu() {
         Intent intent = new Intent(this, RecycleViewMenu.class);
         startActivity(intent);
@@ -60,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
     public void opensign(View view) {
         String email = userEmail.getText().toString();
         String pass = userPassword.getText().toString();
-        String url = "http://192.168.1.101:8080/demo/checkUser?email=" + email + "&password=" + pass;
+
+
+        String url = "http://192.168.1.100:8080/demo/checkUser?email=" + email + "&password=" + pass;
 
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
@@ -74,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    public void openRegister(View view) {
+        Intent intent = new Intent(this,Register.class);
+        startActivity(intent);
+    }
+
     private class HTTPResponceListner implements Response.Listener<String> {
         @Override
         public void onResponse(String response) {
@@ -81,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             if(result == 1) {
 
                 openMenu();
+               sendLoginDetails();
             }
             else {
                // message.setText("User or password incorrect");
@@ -93,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     private class HTTPErrorListner implements Response.ErrorListener {
         @Override
         public void onErrorResponse(VolleyError error) {
@@ -101,5 +102,24 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    private void sendLoginDetails() {
+        String email = userEmail.getText().toString();
+
+        String url = "http://192.168.1.100:8080/demo/addlogin?email=" + email;
+
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET
+                , url
+                , null,
+                null);
+
+        requestQueue.add(stringRequest);
+
+    }
+
+
 
 }

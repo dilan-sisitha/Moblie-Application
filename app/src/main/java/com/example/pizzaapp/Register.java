@@ -17,7 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 public class Register extends AppCompatActivity {
-    public EditText username, password, email, mobile;
+    public EditText usernameTxt, passwordTxt, emailTxt, mobileTxt;
     public Button adduser;
 
     @Override
@@ -25,26 +25,25 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        getSupportActionBar().setTitle("REGISTER NOW");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        username = findViewById(R.id.userName);
-        email = findViewById(R.id.Email);
-        password = findViewById(R.id.Password);
-        mobile = findViewById(R.id.telephone);
+
+        usernameTxt = findViewById(R.id.userName);
+        emailTxt = findViewById(R.id.Email);
+        passwordTxt = findViewById(R.id.Password);
+        mobileTxt = findViewById(R.id.telephone);
         adduser = findViewById(R.id.addUser);
 
         adduser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
-                String email1 = email.getText().toString();
-                String password1 = password.getText().toString();
-                String mobieno = mobile.getText().toString();
+                String user = usernameTxt.getText().toString();
+                String email = emailTxt.getText().toString();
+                String password = passwordTxt.getText().toString();
+                String mobieno = mobileTxt.getText().toString();
 
 
-                String url = "http://192.168.1.101:8080/demo/useradd?user_name=" + user + "&password=" + password1 + "&email=" + email1 + "&telephone=" + mobieno;
+                String url = "http://192.168.1.100:8080/demo/useradd?user_name=" + user + "&password=" + password + "&email=" + email + "&telephone=" + mobieno;
 
                 RequestQueue requestQueue = Volley.newRequestQueue(Register.this);
 

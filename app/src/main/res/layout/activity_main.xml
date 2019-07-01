@@ -128,8 +128,8 @@
                     android:textSize="14dp"
                     android:textAlignment="center"
                     android:gravity="center_vertical"
-
                     android:background="@drawable/cust_button"
+                    android:onClick="openRegister"
                     />
 
                 <Button

@@ -1,4 +1,4 @@
-package com.example.pizzaapp;
+package com.example.pizzaapp.MenuList;
 
 public class Pizza {
 

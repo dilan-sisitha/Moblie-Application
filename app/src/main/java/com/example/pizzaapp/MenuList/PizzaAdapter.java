@@ -1,4 +1,4 @@
-package com.example.pizzaapp;
+package com.example.pizzaapp.MenuList;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.pizzaapp.R;
 
 import java.util.List;
 /*data to be shown in viewHolder is in adapter*/
