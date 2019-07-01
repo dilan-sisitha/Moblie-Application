@@ -50,7 +50,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             @Override
             public void onClick(View v) {
                 String orderId = String.valueOf(cart.getOrder_Id());
-                // Toast.makeText(Ctx.getApplicationContext(),orderId,Toast.LENGTH_SHORT).show();
+                
 
                 String url = "http://192.168.1.101:8080/demo/deleteByCartId?id=" + orderId ;
 
