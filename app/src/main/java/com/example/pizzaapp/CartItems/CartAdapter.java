@@ -24,6 +24,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private Context Ctx;
     private List<Cart> cartList;
+    Double totalPrice =0.0;
 
     public CartAdapter(Context ctx, List<Cart> cartList) {
         this.Ctx = ctx;
@@ -46,13 +47,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         cartViewHolder.txtQuantity.setText(String.valueOf(cart.getQuantity()));
         cartViewHolder.txtPrice.setText(String.valueOf(cart.getPrice()));
 
+        Double itemTotal = Double.valueOf(cart.getQuantity())*cart.getPrice();
+        totalPrice = totalPrice + itemTotal;
+        Total.setTotalPrice(itemTotal);
+
         cartViewHolder.deleteitem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String orderId = String.valueOf(cart.getOrder_Id());
-                
 
-                String url = "http://192.168.1.101:8080/demo/deleteByCartId?id=" + orderId ;
+
+                String url = "http://192.168.43.216:8080/demo/deleteByCartId?id=" + orderId ;
 
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {

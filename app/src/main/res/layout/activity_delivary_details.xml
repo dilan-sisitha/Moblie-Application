@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment.DelivaryDetails"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Delivary Details"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_arrow_back_black"
+
+            />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+
+
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FULL NAME:"
+                    android:textStyle="bold"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/diliName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ADDRESS:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/diliAdress"
+                    android:layout_width="300dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TELEPHONE NUMBER:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/tele"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="number"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="COMMENTS:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/comm"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/place"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/linear1"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:background="@android:color/holo_green_light"
+                android:text="PLACE ORDER"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:onClick="palceDilivery"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -28,7 +28,7 @@ public class RecycleViewMenu extends AppCompatActivity {
     PizzaAdapter adapter;
 
     List<Pizza> pizzaList;
-    String url ="http://192.168.1.101:8080/demo/all";
+    String url ="http://192.168.43.216:8080/demo/all";
 
 
     @Override

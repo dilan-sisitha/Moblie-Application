@@ -156,13 +156,7 @@
 
     </ScrollView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="next activity"
-        android:layout_below="@+id/scroll"
-        android:layout_centerInParent="true"
-        android:onClick="opennext"/>
+
 
 
 

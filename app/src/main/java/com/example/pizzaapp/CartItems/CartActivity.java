@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.MenuList.RecycleViewMenu;
+import com.example.pizzaapp.Payment.PaymentType;
 import com.example.pizzaapp.R;
 
 import org.json.JSONArray;
@@ -31,7 +32,7 @@ public class CartActivity extends AppCompatActivity {
     CartAdapter adapter;
 
     List<Cart> cartList;
-    final static String url ="http://192.168.1.101:8080/demo/allcart";
+    final static String url ="http://192.168.43.216:8080/demo/allcart";
 
     private Button checkout;
     private TextView txtTotal;
@@ -103,7 +104,9 @@ public class CartActivity extends AppCompatActivity {
 
 
     public void checkout(View view) {
-        Toast.makeText(this,"gggg",Toast.LENGTH_SHORT).show();;
+        Intent intent = new Intent(this, PaymentType.class);
+        startActivity(intent);
+        //Toast.makeText(CartActivity.this,"ffffffffff",Toast.LENGTH_SHORT).show();
     }
 
     public void goback(View view) {

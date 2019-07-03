@@ -41,7 +41,8 @@ tools:context=".MenuList.ExpandDetails">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="720dp">
+        android:layout_height="720dp"
+        android:background="@android:color/darker_gray">
 
 
 
@@ -49,7 +50,7 @@ tools:context=".MenuList.ExpandDetails">
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
             android:contentDescription="TODO"
-            android:layout_height="170dp"
+            android:layout_height="300dp"
             android:layout_margin="20dp"
             />
 
@@ -63,6 +64,7 @@ tools:context=".MenuList.ExpandDetails">
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:textColor="@android:color/black"
             android:layout_below="@id/detail_image"/>
 
         <TextView
@@ -72,6 +74,8 @@ tools:context=".MenuList.ExpandDetails">
             android:layout_below="@id/itemname"
             android:layout_margin="15dp"
             android:text="description"
+            android:gravity="center"
+            android:textStyle="italic"
             android:textSize="15dp" />
         <TextView
             android:id="@+id/txtprice"
@@ -98,19 +102,23 @@ tools:context=".MenuList.ExpandDetails">
             android:paddingTop="10dp"
             app:initialNumber="1"
             app:finalNumber="25"
+
+
             >
 
         </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
         <Button
             android:id="@+id/purchaseBtn"
-            android:layout_width="wrap_content"
+
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/elegantBtn"
             android:layout_gravity="left"
             android:text="Add to cart"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cust_button"
 
             />
 
@@ -126,7 +134,7 @@ tools:context=".MenuList.ExpandDetails">
         android:elevation="6dp"
         android:src="@drawable/ic_add_shopping_cart_black_24dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
         android:onClick="OpenCart"/>
 

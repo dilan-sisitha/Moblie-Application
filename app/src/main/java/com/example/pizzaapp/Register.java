@@ -43,7 +43,7 @@ public class Register extends AppCompatActivity {
                 String mobieno = mobileTxt.getText().toString();
 
 
-                String url = "http://192.168.1.100:8080/demo/useradd?user_name=" + user + "&password=" + password + "&email=" + email + "&telephone=" + mobieno;
+                String url = "http://192.168.43.216:8080/demo/useradd?user_name=" + user + "&password=" + password + "&email=" + email + "&telephone=" + mobieno;
 
                 RequestQueue requestQueue = Volley.newRequestQueue(Register.this);
 

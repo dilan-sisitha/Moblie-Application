@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment.CardDetails"
+    android:background="@android:color/darker_gray"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:layout_alignParentTop="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Payment Method"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:src="@drawable/ic_arrow_back_black"
+
+        />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+
+
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CARD HOLDERS NAME:"
+                    android:textStyle="bold"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/cardHolderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CARD NUMBER:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+
+                <EditText
+                    android:paddingTop="10dp"
+                    android:id="@+id/crdNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:hint="  "
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="number"/>
+
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expirey Date:"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:paddingTop="10dp"
+                        android:id="@+id/expMon"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/cust_edittext"
+                        android:hint="MM"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:inputType="number"
+                        />
+                    <EditText
+                        android:paddingTop="10dp"
+                        android:id="@+id/expDate"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/cust_edittext"
+                        android:hint="DD"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VERIFICSTION CODE:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+
+                <EditText
+
+                    android:paddingTop="10dp"
+                    android:id="@+id/ver"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cust_edittext"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/linear1"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/holo_green_light"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:text="YES I CONFIRM MY PAYMENT"
+                android:onClick="Confirm"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>
