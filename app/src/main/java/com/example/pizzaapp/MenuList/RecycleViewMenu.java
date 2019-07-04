@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.CartItems.CartActivity;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.R;
 
 import org.json.JSONArray;
@@ -28,7 +29,7 @@ public class RecycleViewMenu extends AppCompatActivity {
     PizzaAdapter adapter;
 
     List<Pizza> pizzaList;
-    String url ="http://192.168.43.216:8080/demo/all";
+    String url = IpAdress.ip+"/demo/all";
 
 
     @Override

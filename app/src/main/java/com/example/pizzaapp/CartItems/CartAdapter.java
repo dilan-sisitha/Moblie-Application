@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.R;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private Context Ctx;
     private List<Cart> cartList;
-    Double totalPrice =0.0;
+
 
     public CartAdapter(Context ctx, List<Cart> cartList) {
         this.Ctx = ctx;
@@ -48,8 +49,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         cartViewHolder.txtPrice.setText(String.valueOf(cart.getPrice()));
 
         Double itemTotal = Double.valueOf(cart.getQuantity())*cart.getPrice();
-        totalPrice = totalPrice + itemTotal;
-        Total.setTotalPrice(itemTotal);
+
 
         cartViewHolder.deleteitem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 String orderId = String.valueOf(cart.getOrder_Id());
 
 
-                String url = "http://192.168.43.216:8080/demo/deleteByCartId?id=" + orderId ;
+                String url = IpAdress.ip+"/demo/deleteByCartId?id=" + orderId ;
 
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {

@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.pizzaapp.CartItems.CartActivity;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -95,7 +96,7 @@ public class ExpandDetails extends AppCompatActivity {
 
        // Toast.makeText(getApplicationContext(),(pizzaName+" "+quantity+" "+updatedPrice),Toast.LENGTH_LONG).show();
 
-        String url = "http://192.168.43.216:8080/demo/addcart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
+        String url = IpAdress.ip+"/demo/addcart?pizza_type=" + pizzaName + "&quantity=" + quantity  + "&price=" + updatedPrice;
 
         RequestQueue requestQueue = Volley.newRequestQueue(ExpandDetails.this);
 
@@ -147,7 +148,7 @@ public class ExpandDetails extends AppCompatActivity {
         @Override
         public void onErrorResponse(VolleyError error) {
             //responce.setText(error.getMessage());
-            Toast.makeText(getApplicationContext(),"connection error// "+error.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"connection error "+error.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

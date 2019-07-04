@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.MenuList.RecycleViewMenu;
 import com.example.pizzaapp.Payment.PaymentType;
 import com.example.pizzaapp.R;
@@ -28,11 +29,15 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
 
+    Double totalPrice =0.0;
+    Total total = new Total();
+    TextView priceTxt;
+
     RecyclerView recyclerView;
     CartAdapter adapter;
 
     List<Cart> cartList;
-    final static String url ="http://192.168.43.216:8080/demo/allcart";
+    final static String url = IpAdress.ip+"/demo/allcart";
 
     private Button checkout;
     private TextView txtTotal;
@@ -47,6 +52,9 @@ public class CartActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.cart_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+
 
 
         getData();
@@ -77,6 +85,9 @@ public class CartActivity extends AppCompatActivity {
                                 int quantity = cartobject.getInt("quantity");
                                 Double price = cartobject.getDouble("price");
 
+                                totalPrice = totalPrice + price;
+                                total.setTotalPrice(totalPrice);
+
                                 Cart cart = new Cart(id,pizza,quantity,price);
                                 cartList.add(cart);
                             }
@@ -90,6 +101,13 @@ public class CartActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
+                        if(cartList.size()==0){
+                            priceTxt = findViewById(R.id.totalPrice);
+                            priceTxt.setText("0.00");
+                        }else {
+                            priceTxt = findViewById(R.id.totalPrice);
+                            priceTxt.setText(String.valueOf(Total.getTotalPrice()));
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -104,8 +122,12 @@ public class CartActivity extends AppCompatActivity {
 
 
     public void checkout(View view) {
-        Intent intent = new Intent(this, PaymentType.class);
-        startActivity(intent);
+        if(cartList.size()==0) {
+            Toast.makeText(CartActivity.this,"add items to cart",Toast.LENGTH_SHORT).show();
+        }else {
+            Intent intent = new Intent(this, PaymentType.class);
+            startActivity(intent);
+        }
         //Toast.makeText(CartActivity.this,"ffffffffff",Toast.LENGTH_SHORT).show();
     }
 

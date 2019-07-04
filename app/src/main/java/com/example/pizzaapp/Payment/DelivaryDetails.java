@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.R;
 
 public class DelivaryDetails extends AppCompatActivity {
@@ -58,7 +59,7 @@ public class DelivaryDetails extends AppCompatActivity {
 
 
 
-        String url = "http://192.168.43.216:8080/demo/cashPayadd?username=" + diliname + "&address=" + addres + "&telephone=" + tele + "&comment=" + comm;
+        String url = IpAdress.ip+"/demo/cashPayadd?username=" + diliname + "&address=" + addres + "&telephone=" + tele + "&comment=" + comm;
 
         RequestQueue requestQueue = Volley.newRequestQueue(DelivaryDetails.this);
 

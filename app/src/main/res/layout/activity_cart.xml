@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartItems.CartActivity">
+    tools:context=".CartItems.CartActivity"
+
+    >
 
 
     <RelativeLayout
@@ -37,12 +39,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/rel"
-        android:layout_above="@+id/checkbtn"
+        android:layout_above="@+id/totalPrice"
 
 
         >
 
     </android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/totalTxt"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/checkbtn"
+        android:layout_marginLeft="100dp"
+        android:gravity="center"
+        android:text="YOUR TOTAL ="
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        />
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/checkbtn"
+        android:layout_toRightOf="@id/totalTxt"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
     <Button
         android:id="@+id/checkbtn"
         android:layout_width="match_parent"
