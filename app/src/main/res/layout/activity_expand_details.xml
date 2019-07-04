@@ -11,17 +11,20 @@ tools:context=".MenuList.ExpandDetails">
     <RelativeLayout
         android:id="@+id/rel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:layout_alignParentTop="true">
+        android:layout_height="40dp"
+        android:background="@drawable/layout_background"
+        android:layout_alignParentTop="true"
+        android:elevation="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Pizza Details"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="20dp"
             android:gravity="center"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:elevation="5dp"
+            />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -42,17 +45,24 @@ tools:context=".MenuList.ExpandDetails">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="720dp"
-        android:background="@android:color/darker_gray">
+        >
 
-
-
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
             android:contentDescription="TODO"
             android:layout_height="300dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             />
+        </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/itemname"
@@ -62,10 +72,11 @@ tools:context=".MenuList.ExpandDetails">
             android:text="name"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textColor="@android:color/black"
-            android:layout_below="@id/detail_image"/>
+            android:layout_below="@id/cardimage"/>
 
         <TextView
             android:id="@+id/details"
@@ -81,7 +92,7 @@ tools:context=".MenuList.ExpandDetails">
             android:id="@+id/txtprice"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="price"
             android:gravity="center"
             android:layout_centerHorizontal="true"
@@ -98,10 +109,14 @@ tools:context=".MenuList.ExpandDetails">
             android:layout_width="150dp"
             android:layout_height="55dp"
             android:layout_below="@id/txtprice"
+
             android:layout_centerHorizontal="true"
-            android:paddingTop="10dp"
+            android:layout_marginTop="5dp"
             app:initialNumber="1"
             app:finalNumber="25"
+            app:backGroundColor="@android:color/background_dark"
+            app:textColor="@android:color/white"
+            app:textSize="7sp"
 
 
             >

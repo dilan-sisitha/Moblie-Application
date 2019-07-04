@@ -16,7 +16,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.CartItems.Total;
 import com.example.pizzaapp.R;
-import com.example.pizzaapp.Register;
 
 public class CardDetails extends AppCompatActivity {
 

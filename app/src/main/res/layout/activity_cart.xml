@@ -12,17 +12,20 @@
     <RelativeLayout
         android:id="@+id/rel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_light"
-        android:layout_alignParentTop="true">
+        android:layout_height="40dp"
+        android:background="@drawable/layout_background"
+        android:layout_alignParentTop="true"
+        android:elevation="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="CART"
-            android:textColor="@android:color/white"
+            android:text="Cart"
+            android:textColor="@android:color/black"
             android:textSize="20dp"
             android:gravity="center"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:elevation="5dp"
+            />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"

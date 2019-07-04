@@ -1,4 +1,4 @@
-package com.example.pizzaapp;
+package com.example.pizzaapp.LoginAndRegister;
 
 public class LoginData {
 

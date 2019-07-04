@@ -1,9 +1,10 @@
-package com.example.pizzaapp;
+package com.example.pizzaapp.LoginAndRegister;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +16,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.MenuList.RecycleViewMenu;
+import com.example.pizzaapp.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button registerBtn;
@@ -28,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+      // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         userEmail = findViewById(R.id.enterEmail);
@@ -52,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         String email = userEmail.getText().toString();
         String pass = userPassword.getText().toString();
 
-        String ip =IpAdress.ip;
+        String ip = IpAdress.ip;
         String url = ip +"/demo/checkUser?email=" + email + "&password=" + pass;
 
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
@@ -68,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openRegister(View view) {
-        Intent intent = new Intent(this,Register.class);
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
 

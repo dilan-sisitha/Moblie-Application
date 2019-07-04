@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,6 +82,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         });
 
 
+        cartViewHolder.cartItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Ctx,UpdateQuantity.class);
+                Ctx.startActivity(intent);
+
+            }
+        });
+
+
 
     }
 
@@ -94,6 +106,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         TextView txtPizzaName;
         TextView txtQuantity;
         TextView txtPrice;
+        RelativeLayout cartItem;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -101,6 +114,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             txtPizzaName = itemView.findViewById(R.id.productNameView);
             txtQuantity = itemView.findViewById(R.id.productQuantityView);
             txtPrice = itemView.findViewById(R.id.productPriceView);
+            cartItem = itemView.findViewById(R.id.cartrel);
 
 
 
