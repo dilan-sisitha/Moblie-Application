@@ -1,5 +1,6 @@
 package com.example.pizzaapp.CartItems;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.IpAdress;
+import com.example.pizzaapp.MenuList.ExpandDetails;
 import com.example.pizzaapp.R;
 
 import java.util.List;
@@ -26,6 +28,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     private Context Ctx;
     private List<Cart> cartList;
+
+    public static final String EXTRA_CART_ID = "order id";
+    public static final String EXTRA_PIZZA_TYPE = " pizza name";
+    public static final String EXTRA_UNIT_PRICE = "unit price";
+
+
 
 
     public CartAdapter(Context ctx, List<Cart> cartList) {
@@ -49,7 +57,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         cartViewHolder.txtQuantity.setText(String.valueOf(cart.getQuantity()));
         cartViewHolder.txtPrice.setText(String.valueOf(cart.getPrice()));
 
-        Double itemTotal = Double.valueOf(cart.getQuantity())*cart.getPrice();
+
 
 
         cartViewHolder.deleteitem.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +94,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Ctx,UpdateQuantity.class);
-                Ctx.startActivity(intent);
+                Intent intent1 = new Intent(Ctx, UpdateQuantity.class);
+                intent1.putExtra(EXTRA_CART_ID,String.valueOf(cart.getOrder_Id()));
+                intent1.putExtra(EXTRA_PIZZA_TYPE,cart.getPizzpizza_type());
+                intent1.putExtra(EXTRA_UNIT_PRICE,String.valueOf(cart.getUnitPrice()));
+
+                Ctx.startActivity(intent1);
+
+
 
             }
         });

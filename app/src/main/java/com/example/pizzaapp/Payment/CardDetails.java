@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pizzaapp.CartItems.Total;
+import com.example.pizzaapp.IpAdress;
 import com.example.pizzaapp.R;
 
 public class CardDetails extends AppCompatActivity {
@@ -61,7 +62,7 @@ public class CardDetails extends AppCompatActivity {
 
 
 
-        String url = "http://192.168.43.216:8080/demo/payadd?cardName=" + name + "&cardNum=" + num + "&expDate=" + day + "&veriNum=" + veri;
+        String url = IpAdress.ip + "/demo/payadd?cardName=" + name + "&cardNum=" + num + "&expDate=" + day + "&veriNum=" + veri;
 
         RequestQueue requestQueue = Volley.newRequestQueue(CardDetails.this);
 

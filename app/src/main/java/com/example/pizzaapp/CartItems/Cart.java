@@ -5,12 +5,14 @@ public class Cart {
     String pizzpizza_type;
     int quantity;
     Double price;
+    Double unitPrice;
 
-    public Cart(int order_Id, String pizzpizza_type, int quantity, Double price) {
+    public Cart(int order_Id, String pizzpizza_type, int quantity, Double price,Double unitPrice) {
         this.order_Id = order_Id;
         this.pizzpizza_type = pizzpizza_type;
         this.quantity = quantity;
         this.price = price;
+        this.unitPrice = unitPrice;
     }
 
     public int getOrder_Id() {
@@ -43,5 +45,13 @@ public class Cart {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }

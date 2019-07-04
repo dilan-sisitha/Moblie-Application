@@ -84,11 +84,12 @@ public class CartActivity extends AppCompatActivity {
                                 String pizza = cartobject.getString("pizza_type");
                                 int quantity = cartobject.getInt("quantity");
                                 Double price = cartobject.getDouble("price");
+                                Double Unitprice = cartobject.getDouble("unitPrice");
 
                                 totalPrice = totalPrice + price;
                                 total.setTotalPrice(totalPrice);
 
-                                Cart cart = new Cart(id,pizza,quantity,price);
+                                Cart cart = new Cart(id,pizza,quantity,price,Unitprice);
                                 cartList.add(cart);
                             }
 
